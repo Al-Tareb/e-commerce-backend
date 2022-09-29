@@ -40,12 +40,12 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASS
 mongoose.connection.on("open", () => console.log("Database connection established"));
 mongoose.connection.on("error", () => console.error);
 
-app.use(cors({
-    // origin: "https://e-commerce-apple-product-api.onrender.com",
-    origin: "https://e-commerce-apple-product-api.onrender.com",
-    credentials: true
-   
-}));
+// app.use(cors({
+//     origin: "https://e-commerce-apple-product.onrender.com",
+//     credentials: true,
+//     optionsSuccessStatus: 200
+app.use(cors());
+// }));
 //https://e-commerce-apple-product-api.onrender.com/products
 //app.use(cors())
 app.use(cookieParser());
