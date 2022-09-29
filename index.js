@@ -41,10 +41,10 @@ mongoose.connection.on("open", () => console.log("Database connection establishe
 mongoose.connection.on("error", () => console.error);
 
 app.use(cors({
-    origin: "*",
+    origin: "https://e-commerce-apple-product-api.onrender.com/products",
     // credentials: false
 }));
-
+//https://e-commerce-apple-product-api.onrender.com/products
 //app.use(cors())
 app.use(cookieParser());
 
@@ -62,6 +62,13 @@ app.use("/customers", customersRouter);
 app.use("/products", productsRouter);
 app.use("/order", orderRouter);
 app.use("/api/stripe", stripeRouter)
+
+app.use(function(req, res, next){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Header", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+})
+
 
 
 app.get('/',(req, res)=>{
