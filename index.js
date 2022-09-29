@@ -40,15 +40,15 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASS
 mongoose.connection.on("open", () => console.log("Database connection established"));
 mongoose.connection.on("error", () => console.error);
 
-// app.use(cors({
-//     origin: "https://e-commerce-apple-product.onrender.com",
+app.use(cors({
+    origin: "https://e-commerce-apple-product.onrender.com"
    
-// }));
+}));
 //https://e-commerce-apple-product-api.onrender.com/products
 //app.use(cors())
 app.use(cookieParser());
 
- app.options('*', corsMiddleware)
+
 app.use(express.json({ limit: '250mb' }));
 
 app.use(express.urlencoded({extended: true, limit: "250mb"}))
