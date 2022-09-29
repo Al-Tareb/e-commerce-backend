@@ -42,7 +42,7 @@ mongoose.connection.on("error", () => console.error);
 
 app.use(cors({
     origin: "*",
-    credentials: false
+    // credentials: false
 }));
 
 //app.use(cors())
