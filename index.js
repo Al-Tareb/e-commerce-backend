@@ -41,7 +41,7 @@ mongoose.connection.on("open", () => console.log("Database connection establishe
 mongoose.connection.on("error", () => console.error);
 
 app.use(cors({
-    origin: "https://e-commerce-apple-product.onrender.com/",
+    origin: "*",
     credentials: true
 }));
 
