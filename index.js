@@ -77,8 +77,8 @@ app.get('/',(req, res)=>{
     res.send("server is connected")
 })
 
-
+const port = process.env.PORT || 3001;
 app.use(globalErrorHandler);
 app.listen(process.env.PORT || 3001, () => {
-    console.log(`Server has started on port ${process.env.port || 3001}!`);
+    console.log(`Server has started on port ${port || 3001}!`);
 })
