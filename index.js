@@ -42,7 +42,7 @@ mongoose.connection.on("error", () => console.error);
 
 app.use(cors({
     // origin: "https://e-commerce-apple-product-api.onrender.com",
-    origin: "https://e-commerce-apple-product.onrender.com",
+    origin: "https://e-commerce-apple-product-api.onrender.com",
     credentials: true
    
 }));
