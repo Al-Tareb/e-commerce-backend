@@ -41,8 +41,8 @@ mongoose.connection.on("open", () => console.log("Database connection establishe
 mongoose.connection.on("error", () => console.error);
 
 app.use(cors({
-    origin: "*"
-    // credentials: true
+    origin: "*",
+    credentials: false
 }));
 
 //app.use(cors())
